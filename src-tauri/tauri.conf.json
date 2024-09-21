@@ -4,7 +4,8 @@
     "beforeDevCommand": "npm run start",
     "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
-    "distDir": "../dist/helpkey/browser"
+    "distDir": "../dist/helpkey/browser",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "helpkey",
@@ -16,6 +17,14 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "globalShortcut": {
+        "all": true
+      },
+      "window": {
+        "all": true,
+        "hide": true,
+        "show": true
       }
     },
     "windows": [
