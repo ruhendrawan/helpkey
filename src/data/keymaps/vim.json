@@ -1,0 +1,67 @@
+[
+  {
+    "context": "Normal Mode",
+    "shortcut": "dap",
+    "description": "Delete a paragraph."
+  },
+  {
+    "context": "Normal Mode",
+    "shortcut": "vap",
+    "description": "Visually select a paragraph."
+  },
+  {
+    "context": "Normal Mode",
+    "shortcut": "ciw",
+    "description": "Change inner word."
+  },
+  {
+    "context": "Insert Mode",
+    "shortcut": "Ctrl+o",
+    "description": "Execute one Normal mode command, then return to Insert mode."
+  },
+  {
+    "context": "Terminal (Mac)",
+    "shortcut": "Cmd+w",
+    "description": "Close the current terminal tab or window."
+  },
+  {
+    "context": "Normal Mode",
+    "shortcut": "Shift+]",
+    "description": "Move to next tag."
+  },
+  {
+    "context": "Normal Mode",
+    "shortcut": "Ctrl+]",
+    "description": "Jump to the tag under the cursor."
+  },
+  {
+    "context": "Normal Mode",
+    "shortcut": "gD",
+    "description": "Go to local declaration."
+  },
+  {
+    "context": "Normal Mode",
+    "shortcut": "gg=G",
+    "description": "Re-indent the entire file."
+  },
+  {
+    "context": "Visual Mode",
+    "shortcut": "Ctrl+c",
+    "description": "Copy selected text to system clipboard."
+  },
+  {
+    "context": "Insert Mode",
+    "shortcut": "Ctrl+r",
+    "description": "Insert the contents of a register."
+  },
+  {
+    "context": "Normal Mode",
+    "shortcut": ":%s/old/new/g",
+    "description": "Replace all occurrences of 'old' with 'new' in the file."
+  },
+  {
+    "context": "Command Line",
+    "shortcut": "Ctrl+p",
+    "description": "Cycle backward through command history."
+  }
+]
