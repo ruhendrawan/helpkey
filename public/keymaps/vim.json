@@ -63,5 +63,30 @@
     "context": "Command Line",
     "motion": "Ctrl+p",
     "description": "Cycle backward through command history."
+  },
+  {
+    "context": "1 Mac Screenshot",
+    "motion": "Cmd+Shift+3",
+    "description": "Take a screenshot of the entire screen."
+  },
+  {
+    "context": "1 Mac Screenshot",
+    "motion": "Cmd+Shift+4",
+    "description": "Take a screenshot of a selected area."
+  },
+  {
+    "context": "1 Mac Screenshot",
+    "motion": "Cmd+Shift+4 Space",
+    "description": "Take a screenshot of a window."
+  },
+  {
+    "context": "1 Mac Screenshot",
+    "motion": "Cmd+Shift+5",
+    "description": "Open the screenshot toolbar."
+  },
+  {
+    "context": "1 Mac Screenshot",
+    "motion": "Ctrl+Cmd+Shift+3",
+    "description": "Take a screenshot of the entire screen and save it to the clipboard."
   }
 ]

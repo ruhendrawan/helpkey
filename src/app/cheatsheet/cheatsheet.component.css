@@ -1,0 +1,6 @@
+.legend-shortcut-key {
+  @apply rounded bg-gray-100 text-gray-400 p-1;
+}
+.modifier-key {
+  @apply mr-1 text-gray-400 bg-gray-100 w-5 rounded inline-block text-center align-middle p-0 text-sm;
+}

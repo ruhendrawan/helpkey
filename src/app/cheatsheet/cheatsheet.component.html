@@ -1,4 +1,4 @@
-<div class="container mx-auto p-4">
+<div class="">
   <input
     type="text"
     [(ngModel)]="textFilter"
@@ -6,13 +6,74 @@
     placeholder="Filter by shortcut..."
     class="border border-gray-300 rounded p-2 w-full mb-4"
   />
-  <table class="table-auto w-full">
-    <tbody>
-      <tr *ngFor="let keymap of list" class="hover:bg-gray-100">
-        <td class="border px-4 py-2">{{ keymap.motion }}</td>
-        <td class="border px-4 py-2">{{ keymap.context }}</td>
-        <td class="border px-4 py-2">{{ keymap.description }}</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="mb-4 text-right text-gray-400">
+    <span class="mr-4 text-sm">
+      <span class="legend-shortcut-key">⌃</span>
+      Ctrl
+    </span>
+    <span class="mr-4 text-sm">
+      <span class="legend-shortcut-key">⌥</span>
+      Alt
+      <span class="text-gray-300">/</span>
+      Option
+    </span>
+    <span class="mr-4 text-sm">
+      <span class="legend-shortcut-key">⇧</span>
+      Shift
+    </span>
+    <span class="mr-4 text-sm">
+      <span class="legend-shortcut-key">⌘</span>
+      Cmd
+      <span class="text-gray-300">/</span>
+      Win
+      <span class="text-gray-300">/</span>
+      Meta
+    </span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs border-r border-y">
+    <div *ngFor="let chunk of chunkContexts" class="grid">
+      <div *ngFor="let context of chunk" class="border-l pb-2">
+        <div class="flex justify-between p-2">
+          <div class="basis-32"></div>
+          <div class="flex-1 text-sm text-gray-300 italic font-serif">
+            {{ context }}
+          </div>
+        </div>
+        <div *ngFor="let keymap of listGrouped[context]">
+          <div class="flex justify-between gap-2 mb-2">
+            <div class="basis-40 text-right">
+              <div class="whitespace-nowrap">
+                <span
+                  *ngFor="let motion_part of keymap.motion.split(' ')"
+                  class="p-1 m-1 border-x rounded"
+                >
+                  <span
+                    *ngFor="let part of motion_part.split('-')"
+                    class="align-middle"
+                  >
+                    @if ("C" == part) {
+                      <span class="modifier-key">⌃</span>
+                    } @else if ("A" == part) {
+                      <span class="modifier-key">⌥</span>
+                    } @else if ("S" == part) {
+                      <span class="modifier-key">⇧</span>
+                    } @else if ("M" == part) {
+                      <span class="modifier-key">⌘</span>
+                    } @else {
+                      <span class="p-1 font-bold font-sans">{{ part }}</span>
+                    }
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <span>{{ keymap.description }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
