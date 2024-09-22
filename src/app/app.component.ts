@@ -1,11 +1,12 @@
 import { Component, ChangeDetectorRef } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { RouterOutlet } from "@angular/router";
+import { Router, RouterOutlet } from "@angular/router";
 
 import { invoke } from "@tauri-apps/api/tauri";
-import { listen } from "@tauri-apps/api/event";
+// import { listen } from "@tauri-apps/api/event";
 import { register } from "@tauri-apps/api/globalShortcut";
 import { appWindow } from "@tauri-apps/api/window";
+import { SettingService } from "./setting.service";
 
 @Component({
   selector: "app-root",
@@ -15,11 +16,8 @@ import { appWindow } from "@tauri-apps/api/window";
   styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  activeWindowTitle = "";
-  appOnTop = true;
-
   updateWindowTitle(title: string) {
-    this.activeWindowTitle = title;
+    this.setting.activeTitle = title;
   }
 
   async fetchActiveWindowTitle() {
@@ -39,33 +37,32 @@ export class AppComponent {
   }
 
   showPermissionInstructions() {
-    // You can use your frontend framework to display a modal or navigate to a page
-    // For simplicity, let's open a new window with the instructions
-    window.open(
-      "https://osxdaily.com/2014/01/05/enable-access-assistive-devices-apps-mac-os-x/",
-      "_blank",
-    );
+    this.router.navigate(["/macos/enable-accessibility"]);
   }
 
   registerGlobalShortcut() {
     register("Control+Shift+Z", () => {
       console.log("Shortcut triggered");
-      if (this.appOnTop) {
+      if (this.setting.appOnTop) {
         appWindow.hide();
         appWindow.setAlwaysOnTop(false);
-        this.appOnTop = false;
+        this.setting.appOnTop = false;
         return;
       } else {
         this.fetchActiveWindowTitle();
         appWindow.show();
         appWindow.setAlwaysOnTop(true);
         appWindow.setFocus();
-        this.appOnTop = true;
+        this.setting.appOnTop = true;
       }
     });
   }
 
-  constructor(private cdRef: ChangeDetectorRef) {
+  constructor(
+    private cdRef: ChangeDetectorRef,
+    private router: Router,
+    private setting: SettingService,
+  ) {
     this.registerGlobalShortcut();
     this.fetchActiveWindowTitle().then(() => {});
     // listen("refresh-active-window-title", () => {
