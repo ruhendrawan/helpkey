@@ -7,10 +7,11 @@ interface Keymotion {
   chords: Keychord[];
 }
 
-interface Keymap {
+export interface Keymap {
   context: string;
   description: string;
-  motion: string | Keychord | Keymotion;
+  data: Keymap | Keymotion | null;
+  motion: string;
 }
 
 export async function getKeymaps(): Promise<Keymap[]> {
@@ -19,6 +20,7 @@ export async function getKeymaps(): Promise<Keymap[]> {
   return keymaps.map((cmd) => ({
     context: cmd.name || "",
     description: cmd.description || "",
+    data: null,
     motion: cmd.motion || "",
   }));
 }
