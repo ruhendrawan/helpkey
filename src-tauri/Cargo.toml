@@ -1,9 +1,9 @@
 [package]
 name = "helpkey"
 version = "0.1.0"
-description = "Help me which key to press"
-authors = ["you"]
-edition = "2021"
+description = "Help me remember which keys I need to press"
+authors = ["ruhendrawan"]
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
