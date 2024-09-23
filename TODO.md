@@ -1,0 +1,6 @@
+- [ ] Shortcut for hide/show should not focus the window
+- [ ] Shortcut to focus and search
+- [ ] Shortcut to go back to last apps (like alt+tab), if possible
+- [ ] Form to add new key motions
+- [ ] Auto filter based on current windows context
+- [ ]

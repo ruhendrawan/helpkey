@@ -1,10 +1,17 @@
 import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { Component } from "@angular/core";
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from "@angular/core";
 
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { Keymap } from "../../utils/keymaps";
 import { empty } from "rxjs";
+import { appWindow } from "@tauri-apps/api/window";
 
 @Component({
   selector: "app-cheatsheet",
@@ -14,6 +21,8 @@ import { empty } from "rxjs";
   styleUrl: "./cheatsheet.component.css",
 })
 export class CheatsheetComponent {
+  @ViewChild("search") searchElement: ElementRef;
+
   list: Keymap[] = [];
   listGrouped: { [key: string]: Keymap[] } = {};
   listContexts: string[] = [];
@@ -23,6 +32,13 @@ export class CheatsheetComponent {
   textFilter = "";
 
   constructor(private http: HttpClient) {}
+
+  @HostListener("window:focus")
+  onFocus() {
+    if (this.searchElement) {
+      this.searchElement.nativeElement.focus();
+    }
+  }
 
   ngOnInit(): void {
     this.http.get<Keymap[]>("keymaps/vim.json").subscribe((data) => {
