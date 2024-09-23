@@ -12,6 +12,11 @@
     "version": "0.1.0"
   },
   "tauri": {
+    "systemTray": {
+      "iconPath": "icons/32x32.png",
+      "iconAsTemplate": true,
+      "title": "HelpKey"
+    },
     "allowlist": {
       "all": false,
       "shell": {
@@ -22,16 +27,23 @@
         "all": true
       },
       "window": {
-        "all": true,
+        "show": true,
         "hide": true,
-        "show": true
+        "setFocus": true,
+        "setSize": true,
+        "center": true,
+        "setSkipTaskbar": true
       }
     },
     "windows": [
       {
-        "title": "helpkey",
+        "title": "HelpKey",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "alwaysOnTop": true,
+        "transparent": true,
+        "center": true,
+        "skipTaskbar": true
       }
     ],
     "security": {
@@ -39,6 +51,7 @@
     },
     "bundle": {
       "active": true,
+      "category": "Education",
       "targets": "all",
       "identifier": "com.helpkey.app",
       "icon": [
@@ -48,6 +61,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ]
-    }
+    },
+    "macOSPrivateApi": true
   }
 }
