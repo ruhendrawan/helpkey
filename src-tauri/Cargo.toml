@@ -11,7 +11,18 @@ edition = "2021"
 tauri-build = { version = "1", features = [] }
 
 [dependencies]
-tauri = { version = "1", features = [ "window-show", "window-set-size", "window-hide", "window-set-skip-taskbar", "window-set-focus", "window-center", "global-shortcut-all", "shell-open", "system-tray", "macos-private-api"] }
+tauri = { version = "1", features = [
+  "window-show",
+  "window-set-size",
+  "window-hide",
+  "window-set-skip-taskbar",
+  "window-set-focus",
+  "window-center",
+  "global-shortcut-all",
+  "shell-open",
+  "system-tray",
+  "macos-private-api",
+] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 auto-launch = "0.4.0"
@@ -30,9 +41,10 @@ core-foundation = "0.9"
 core-foundation-sys = "0.8"
 cocoa = "0.24"
 objc = "0.2"
-objc_id = {version = "0.1" }
+objc_id = { version = "0.1" }
 objc-foundation = { version = "0.1" }
 libc = "0.2"
+
 
 [target.'cfg(target_os = "linux")'.dependencies]
 x11 = "2.20.0"
