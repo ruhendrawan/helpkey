@@ -6,6 +6,7 @@ import { Injectable } from "@angular/core";
 export class SettingService {
   activeTitle = "";
   appOnTop = true;
+  isSettingVisible = false;
 
   constructor() {}
 }
