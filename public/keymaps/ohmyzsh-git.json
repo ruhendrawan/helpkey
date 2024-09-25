@@ -1,0 +1,623 @@
+{
+	"title": "Oh-My-Zsh Git",
+	"description": "Oh-My-Zsh Git Aliases",
+	"context_filters": [
+		"terminal zsh",
+		"kitty",
+		"wezterm"
+	],
+	"source_url": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git",
+	"categories": [
+		{
+			"subtitle": "Basic/commonly used",
+			"explanation": "These are the most basic and frequently used Git commands for adding files, committing changes, checking out branches, pushing to remote repositories, pulling from remote repositories, and checking the current status of the repository.",
+			"motions": [
+				{
+					"ga": [
+						"git add",
+						"Stages changes to be committed.",
+						"Used before committing to specify which files to include in the commit."
+					]
+				},
+				{
+					"gcmsg": [
+						"git commit -m",
+						"Commits changes with a message.",
+						"The -m option allows you to provide the commit message directly."
+					]
+				},
+				{
+					"gco": [
+						"git checkout",
+						"Switches between branches or restores files.",
+						"Use it to move between different branches or restore files to an earlier state."
+					]
+				},
+				{
+					"gp": [
+						"git push",
+						"Pushes local commits to the remote repository.",
+						"Sends committed changes from the local repository to the remote."
+					]
+				},
+				{
+					"gl": [
+						"git pull",
+						"Fetches and merges changes from the remote repository.",
+						"Updates the local branch with changes from the corresponding remote branch."
+					]
+				},
+				{
+					"gst": [
+						"git status",
+						"Displays the status of the working directory and staging area.",
+						"Shows which changes are staged, unstaged, or untracked."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Staging changes",
+			"explanation": "Staging is the process of adding your changes to the staging area before committing them. These commands help you stage files selectively, stage all changes, or handle changes in patches for review before committing.",
+			"motions": [
+				{
+					"ga": [
+						"git add",
+						"Stages specific changes.",
+						"Add specified files or changes to the staging area."
+					]
+				},
+				{
+					"gaa": [
+						"git add --all",
+						"Stages all changes.",
+						"Stages all modified, new, or deleted files in the working directory."
+					]
+				},
+				{
+					"gapa": [
+						"git add --patch",
+						"Stages changes interactively.",
+						"Allows you to review and stage specific parts of a file in patches."
+					]
+				},
+				{
+					"gav": [
+						"git add --verbose",
+						"Stages changes with verbose output.",
+						"Displays detailed information during the staging process."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Committing changes",
+			"explanation": "Once changes are staged, they can be committed to the local repository. These commands cover basic commit operations, amend previous commits, and sign commits for security verification.",
+			"motions": [
+				{
+					"gc": [
+						"git commit -v",
+						"Commits changes with verbose output.",
+						"Creates a new commit from staged changes and shows details of the commit."
+					]
+				},
+				{
+					"gc!": [
+						"git commit -v --amend",
+						"Amends the last commit.",
+						"Modify the last commit with additional changes or a new message."
+					]
+				},
+				{
+					"gca": [
+						"git commit -v -a",
+						"Commits all tracked changes.",
+						"Automatically stages and commits all modified and deleted tracked files."
+					]
+				},
+				{
+					"gcas": [
+						"git commit -a -s",
+						"Commits all changes and adds a sign-off.",
+						"Includes a 'Signed-off-by' line in the commit message, often used in open-source projects."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Branch management",
+			"explanation": "Branches allow you to work on different features or bug fixes simultaneously. These commands help create, delete, list, and manage local and remote branches.",
+			"motions": [
+				{
+					"gb": [
+						"git branch",
+						"Lists, creates, or deletes branches.",
+						"Shows the current branches or creates a new one."
+					]
+				},
+				{
+					"gbd": [
+						"git branch -d",
+						"Deletes a branch.",
+						"Deletes a local branch that has been fully merged."
+					]
+				},
+				{
+					"gcb": [
+						"git checkout -b",
+						"Creates and switches to a new branch.",
+						"Creates a new branch and switches to it immediately."
+					]
+				},
+				{
+					"gbr": [
+						"git branch --remote",
+						"Lists remote branches.",
+						"Displays all the branches available in the remote repository."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Switching branches",
+			"explanation": "Switching between branches is a core Git feature, allowing you to move between different code states or features easily. These commands help you switch to an existing branch or create a new branch on the fly.",
+			"motions": [
+				{
+					"gco": [
+						"git checkout",
+						"Switches between branches.",
+						"Switch to an existing branch or restore files."
+					]
+				},
+				{
+					"gcb": [
+						"git checkout -b",
+						"Creates and switches to a new branch.",
+						"Immediately creates and moves to a new branch."
+					]
+				},
+				{
+					"gsw": [
+						"git switch",
+						"Switches to a different branch.",
+						"A simpler alternative to checkout, used for switching branches."
+					]
+				},
+				{
+					"gswc": [
+						"git switch -c",
+						"Creates and switches to a new branch.",
+						"Combines branch creation and switching."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Syncing with remote",
+			"explanation": "Git repositories are often hosted remotely. These commands are used to fetch the latest changes from the remote repository, pull changes into your local branch, and push your changes to the remote.",
+			"motions": [
+				{
+					"gf": [
+						"git fetch",
+						"Downloads commits, files, and refs from a remote repository.",
+						"Fetches updates from the remote repository without merging them."
+					]
+				},
+				{
+					"gfo": [
+						"git fetch origin",
+						"Fetches updates from the origin remote.",
+						"Gets the latest changes from the default remote repository."
+					]
+				},
+				{
+					"gl": [
+						"git pull",
+						"Fetches and merges updates from the remote repository.",
+						"Combines fetch and merge to update the local branch."
+					]
+				},
+				{
+					"gp": [
+						"git push",
+						"Pushes local commits to the remote repository.",
+						"Sends the committed changes to the remote repository."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Viewing commit logs",
+			"explanation": "Commit logs provide a history of the changes made to the repository. These commands allow you to view logs in different formats, including a simple list of commits or a graph view showing branching and merging.",
+			"motions": [
+				{
+					"glog": [
+						"git log --oneline",
+						"Displays a compact commit history.",
+						"Shows a simplified view of commit history."
+					]
+				},
+				{
+					"glg": [
+						"git log --stat",
+						"Shows commit history with file changes.",
+						"Provides a summary of changes made in each commit."
+					]
+				},
+				{
+					"glgg": [
+						"git log --graph",
+						"Displays commit history as a graph.",
+						"Shows the commit history as a graphical representation of branching and merging."
+					]
+				},
+				{
+					"glo": [
+						"git log --oneline --decorate",
+						"Shows commit history with decorations.",
+						"Adds branch and tag names to the compact commit log."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Merging changes",
+			"explanation": "Merging is the process of integrating changes from one branch into another. These commands help merge branches, handle merge conflicts, and use external tools to assist with merge conflict resolution.",
+			"motions": [
+				{
+					"gm": [
+						"git merge",
+						"Merges changes from one branch into another.",
+						"Integrates the changes from one branch into your current branch."
+					]
+				},
+				{
+					"gmom": [
+						"git merge origin/$(git_main_branch)",
+						"Merges the main branch from the origin remote.",
+						"Brings changes from the main branch on the remote into the current branch."
+					]
+				},
+				{
+					"gmum": [
+						"git merge upstream/$(git_main_branch)",
+						"Merges the upstream main branch.",
+						"Combines changes from the main branch of an upstream repository."
+					]
+				},
+				{
+					"gma": [
+						"git merge --abort",
+						"Aborts a merge in progress.",
+						"Cancels the ongoing merge and resets the state to before the merge started."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Conflict resolution",
+			"explanation": "Merge or rebase conflicts happen when Git cannot automatically resolve changes between branches. These commands help open merge tools, abort a merge or rebase, or manually resolve conflicts.",
+			"motions": [
+				{
+					"gmtl": [
+						"git mergetool --no-prompt",
+						"Opens the merge tool to resolve conflicts.",
+						"Launches the configured merge tool to resolve conflicts."
+					]
+				},
+				{
+					"gmtlvim": [
+						"git mergetool --tool=vimdiff",
+						"Opens Vimdiff as the merge tool.",
+						"Uses Vimdiff to help resolve merge conflicts interactively."
+					]
+				},
+				{
+					"gma": [
+						"git merge --abort",
+						"Aborts the current merge process.",
+						"Cancels an ongoing merge and resets the repository to its state before the merge."
+					]
+				},
+				{
+					"grba": [
+						"git rebase --abort",
+						"Aborts the current rebase process.",
+						"Stops and undoes any changes from the rebase, restoring the pre-rebase state."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Tagging and cleaning",
+			"explanation": "Tags are used to mark specific commits, often for release versions. Cleaning the working directory helps remove untracked files. These commands help you create, list, and sort tags, as well as clean the repository.",
+			"motions": [
+				{
+					"gts": [
+						"git tag -s",
+						"Creates a signed tag.",
+						"Tags the current commit with a cryptographic signature for release or reference."
+					]
+				},
+				{
+					"gtv": [
+						"git tag | sort -V",
+						"Lists tags in version order.",
+						"Displays all tags, sorted in a way that respects versioning."
+					]
+				},
+				{
+					"gclean": [
+						"git clean -id",
+						"Cleans the working directory.",
+						"Interactively removes untracked files from the working directory."
+					]
+				},
+				{
+					"gpristine": [
+						"git reset --hard && git clean -dffx",
+						"Resets and cleans the repository.",
+						"Hard resets the repository and removes all untracked files, effectively making it 'pristine'."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Stash management",
+			"explanation": "Stashing temporarily saves changes that are not ready to be committed, so you can switch branches or pull updates without losing work. These commands help stash, list, apply, or drop stashes.",
+			"motions": [
+				{
+					"gsta": [
+						"git stash push",
+						"Saves current changes to the stash.",
+						"Temporarily stores your uncommitted changes so you can work on something else."
+					]
+				},
+				{
+					"gstaa": [
+						"git stash apply",
+						"Applies the stashed changes.",
+						"Re-applies the stashed changes to the working directory without deleting them from the stash."
+					]
+				},
+				{
+					"gstl": [
+						"git stash list",
+						"Lists all stashes.",
+						"Displays all the changes you've stashed so far."
+					]
+				},
+				{
+					"gstp": [
+						"git stash pop",
+						"Applies and removes the latest stash.",
+						"Re-applies the stashed changes to the working directory and removes them from the stash list."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Remote management",
+			"explanation": "Managing remotes allows you to configure and control the repositories hosted on different servers. These commands help you add, remove, rename, and update remotes.",
+			"motions": [
+				{
+					"gr": [
+						"git remote",
+						"Lists or manages remotes.",
+						"Shows existing remote connections or adds, renames, or removes remotes."
+					]
+				},
+				{
+					"gra": [
+						"git remote add",
+						"Adds a new remote.",
+						"Associates a new remote repository with the local repository."
+					]
+				},
+				{
+					"grrm": [
+						"git remote remove",
+						"Removes a remote repository.",
+						"Deletes the connection to a remote repository."
+					]
+				},
+				{
+					"grmv": [
+						"git remote rename",
+						"Renames a remote.",
+						"Changes the name of an existing remote repository."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Reverting and resetting",
+			"explanation": "Reverting undoes specific commits, while resetting moves the HEAD and optionally the working directory to a previous state. These commands help you undo commits or reset the repository to an earlier point.",
+			"motions": [
+				{
+					"grev": [
+						"git revert",
+						"Reverts a specific commit.",
+						"Creates a new commit that undoes the changes introduced by a previous commit."
+					]
+				},
+				{
+					"grh": [
+						"git reset",
+						"Resets the current HEAD to a specific state.",
+						"Moves the HEAD pointer to a specified commit, optionally modifying the working directory and staging area."
+					]
+				},
+				{
+					"grhh": [
+						"git reset --hard",
+						"Performs a hard reset.",
+						"Resets both the working directory and index to a previous state, discarding all changes."
+					]
+				},
+				{
+					"groh": [
+						"git reset origin/$(git_current_branch) --hard",
+						"Hard resets the current branch to match the remote.",
+						"Forces the local branch to exactly match the remote branch, discarding local changes."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Viewing changes",
+			"explanation": "Viewing changes helps track the differences between your working directory, staged files, and the last commit. These commands help you view diffs, cached changes, and differences between branches.",
+			"motions": [
+				{
+					"gd": [
+						"git diff",
+						"Shows file differences.",
+						"Displays changes between your working directory and the index or a commit."
+					]
+				},
+				{
+					"gdca": [
+						"git diff --cached",
+						"Shows staged differences.",
+						"Displays the changes that have been staged but not yet committed."
+					]
+				},
+				{
+					"gds": [
+						"git diff --staged",
+						"Shows staged differences.",
+						"A synonym for `--cached` to view staged changes before committing."
+					]
+				},
+				{
+					"gdup": [
+						"git diff @{upstream}",
+						"Shows differences with the upstream branch.",
+						"Displays the differences between your local branch and its remote upstream counterpart."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Applying patches",
+			"explanation": "Patches allow you to apply changes from another repository or from a diff file. These commands help you apply patches and handle conflicts when necessary.",
+			"motions": [
+				{
+					"gap": [
+						"git apply",
+						"Applies a patch.",
+						"Applies changes from a patch file to the current working directory."
+					]
+				},
+				{
+					"gapt": [
+						"git apply --3way",
+						"Applies a patch with three-way merge.",
+						"Attempts to apply a patch while automatically resolving conflicts using three-way merge."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Help and config",
+			"explanation": "These commands provide assistance and display configuration settings in Git. The help command gives access to Git’s built-in documentation, while the config command shows or modifies repository settings.",
+			"motions": [
+				{
+					"ghh": [
+						"git help",
+						"Displays help documentation.",
+						"Opens the help documentation for Git commands."
+					]
+				},
+				{
+					"gcf": [
+						"git config --list",
+						"Lists all configuration settings.",
+						"Displays all the configuration variables set in the repository or globally."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Submodule management",
+			"explanation": "Submodules allow you to include other Git repositories within a project. These commands help clone repositories with submodules, initialize, and update submodules.",
+			"motions": [
+				{
+					"gcl": [
+						"git clone --recurse-submodules",
+						"Clones a repository and its submodules.",
+						"Clones a repository and initializes all its submodules automatically."
+					]
+				},
+				{
+					"gsu": [
+						"git submodule update",
+						"Updates submodules.",
+						"Fetches and checks out the latest changes for all submodules."
+					]
+				},
+				{
+					"gsi": [
+						"git submodule init",
+						"Initializes submodules.",
+						"Prepares submodules to be fetched and checked out."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "Interactive commands",
+			"explanation": "These commands open interactive Git tools, including the Git GUI and GitK, which provide a graphical interface to handle Git operations visually.",
+			"motions": [
+				{
+					"gg": [
+						"git gui citool",
+						"Opens the Git GUI.",
+						"Launches the Git GUI for committing, reviewing, and managing repository changes visually."
+					]
+				},
+				{
+					"gga": [
+						"git gui citool --amend",
+						"Opens the Git GUI for amending.",
+						"Allows you to amend the last commit using the Git GUI."
+					]
+				},
+				{
+					"gk": [
+						"gitk --all --branches &!",
+						"Opens GitK to view branches.",
+						"Launches GitK to display a graphical history of all branches and commits."
+					]
+				}
+			]
+		},
+		{
+			"subtitle": "SVN support",
+			"explanation": "For projects that use both Git and SVN, these commands help manage SVN integration, allowing you to commit and rebase changes between the two version control systems.",
+			"motions": [
+				{
+					"gsd": [
+						"git svn dcommit",
+						"Commits changes to SVN.",
+						"Submits your local changes back to the SVN repository."
+					]
+				},
+				{
+					"gsr": [
+						"git svn rebase",
+						"Rebases against SVN.",
+						"Updates your local Git repository with the latest changes from the SVN repository."
+					]
+				},
+				{
+					"git-svn-dcommit-push": [
+						"git svn dcommit && git push github $(git_main_branch):svntrunk",
+						"Commits to SVN and pushes to GitHub.",
+						"Integrates GitHub and SVN workflows by submitting changes to both platforms."
+					]
+				}
+			]
+		}
+	]
+}
